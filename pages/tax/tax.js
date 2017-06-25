@@ -2,16 +2,19 @@ Page({
     data: {
         wage: 0,
         beginMoney: 0,
+        social: 0,
         tax: 0,
         criticalAarray: [0, 1500, 4500, 9000, 35000, 55000, 80000],
         taxRatesArray: [0, 0.03, 0.10, 0.20, 0.25, 0.30, 0.35, 0.45],
         taxArray: []
     },
     onLoad: function (e) {
+        var tax = this.getTax(e.wage - e.social, e.beginMoney);
         this.setData({
             beginMoney: e.beginMoney,
             wage: e.wage,
-            tax: this.getTax(e.wage, e.beginMoney)
+            social: e.social,
+            tax: tax
         });
     },
     getTax: function (salary, beginMoney) {

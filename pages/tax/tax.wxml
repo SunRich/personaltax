@@ -12,21 +12,30 @@
       </view>
       元
     </view>
-    <view class="weui-cell weui-cell_input">
+   <!-- <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
         <view class="weui-label" style="width:176px;">应纳税所得额</view>
       </view>
       <view class="weui-cell__bd">
-        <input class="weui-input" value="{{wage-beginMoney}}"/>
+        <input class="weui-input" value="{{wage-social-beginMoney}}"/>
       </view>
       元
-    </view>
+    </view>-->
     <view class="weui-cell weui-cell_input">
       <view class="weui-cell__hd">
         <view class="weui-label">应纳税额</view>
       </view>
       <view class="weui-cell__bd">
         <input name="beginMoney" class="weui-input" value="{{tax}}"/>
+      </view>
+      元
+    </view>
+    <view class="weui-cell weui-cell_input">
+      <view class="weui-cell__hd">
+        <view class="weui-label">税后收入</view>
+      </view>
+      <view class="weui-cell__bd">
+        <input name="beginMoney" class="weui-input" value="{{wage-social-tax}}"/>
       </view>
       元
     </view>
@@ -45,7 +54,8 @@
     </view>
     <view class="tr" wx:for="{{taxArray}}">
       <view class="td">{{index+1}}</view>
-      <view class="td">{{criticalAarray[index]}}至{{criticalAarray[index+1]}}</view>
+      <view class="td" wx:if="{{index+1 == criticalAarray.length}}">{{criticalAarray[index]}}以上</view>
+      <view class="td" wx:if="{{index+1 < criticalAarray.length}}">{{criticalAarray[index]}}至{{criticalAarray[index+1]}}</view>
       <view class="td">{{taxRatesArray[index+1]}}</view>
       <view class="td">{{item}}</view>
     </view>

@@ -18,7 +18,7 @@
           <view class="weui-label" style="width:176px;">社保公积金(个人部分)</view>
         </view>
         <view class="weui-cell__bd">
-          <input class="weui-input"/>
+          <input name="social" class="weui-input"/>
         </view>
         元
       </view>
